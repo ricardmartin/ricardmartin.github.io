@@ -184,8 +184,7 @@
 
         <article class="card reveal group cursor-pointer overflow-hidden rounded-2xl border border-white/10 bg-white/5" data-project="sentinel" data-category="ai-web" role="button" tabindex="0" aria-haspopup="dialog" aria-label="View details: Invoice Sentinel" data-es-aria-label="Ver detalles: Invoice Sentinel">
           <div class="relative aspect-video overflow-hidden bg-black/40">
-            <img src="images/sentinel1.jpg" alt="Invoice Sentinel: a supplier invoice with the wrong figure marked and the claim draft" data-es-alt="Invoice Sentinel: una factura de proveedor con la cifra errónea marcada y el borrador de reclamación" class="h-full w-full object-cover object-left-top" loading="lazy" />
-            <span class="pointer-events-none absolute inset-0 flex items-center justify-center bg-black/40 text-sm font-semibold text-white opacity-0 transition group-hover:opacity-100"><span lang="en">View details</span><span lang="es">Ver detalles</span></span>
+            <img src="images/sentinel1.jpg" alt="Invoice Sentinel: a supplier invoice with the wrong figure marked and the claim draft" data-es-alt="Invoice Sentinel: una factura de proveedor con la cifra errónea marcada y el borrador de reclamación" class="h-full w-full object-cover object-left-top" loading="lazy" data-preview="images/sentinel-preview.webm" data-preview-end="16.5" />
           </div>
           <div class="space-y-1 p-6">
             <h3 class="font-display text-xl text-white">Invoice Sentinel</h3>
@@ -1668,6 +1667,40 @@
         if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openProject(el.dataset.project); }
       });
     });
+
+    // Preview en vídeo al pasar por encima de la tarjeta (img con data-preview). Sin hover
+    // (móvil) o con movimiento reducido se queda la imagen. El vídeo se carga en el primer hover.
+    if (matchMedia('(hover: hover)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.querySelectorAll('img[data-preview]').forEach((img) => {
+        const card = img.closest('[data-project]');
+        let video = null;
+        const start = () => {
+          if (!video) {
+            video = document.createElement('video');
+            video.src = img.dataset.preview;
+            video.muted = true;
+            video.playsInline = true;
+            video.setAttribute('aria-hidden', 'true');
+            video.className = 'pointer-events-none absolute inset-0 h-full w-full object-cover object-left-top opacity-0 transition-opacity duration-300';
+            const end = parseFloat(img.dataset.previewEnd);
+            video.addEventListener('timeupdate', () => { if (end && video.currentTime >= end) video.currentTime = 0; });
+            video.addEventListener('ended', () => { video.currentTime = 0; video.play(); });
+            img.after(video);
+          }
+          video.play().then(() => video.classList.remove('opacity-0')).catch(() => {});
+        };
+        const stop = () => {
+          if (!video) return;
+          video.classList.add('opacity-0');
+          video.pause();
+          video.currentTime = 0;
+        };
+        card.addEventListener('mouseenter', start);
+        card.addEventListener('mouseleave', stop);
+        card.addEventListener('focus', start);
+        card.addEventListener('blur', stop);
+      });
+    }
     document.getElementById('modalClose').addEventListener('click', closeModal);
     document.getElementById('modalBackdrop').addEventListener('click', closeModal);
     window.addEventListener('keydown', (e) => {
