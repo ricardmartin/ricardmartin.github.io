@@ -182,6 +182,18 @@
           </div>
         </article>
 
+        <article class="card reveal group cursor-pointer overflow-hidden rounded-2xl border border-white/10 bg-white/5" data-project="sentinel" data-category="ai-web" role="button" tabindex="0" aria-haspopup="dialog" aria-label="View details: Invoice Sentinel" data-es-aria-label="Ver detalles: Invoice Sentinel">
+          <div class="relative aspect-video overflow-hidden bg-black/40">
+            <img src="images/sentinel1.jpg" alt="Invoice Sentinel: a supplier invoice with the wrong figure marked and the claim draft" data-es-alt="Invoice Sentinel: una factura de proveedor con la cifra errónea marcada y el borrador de reclamación" class="h-full w-full object-cover object-left-top" loading="lazy" />
+            <span class="pointer-events-none absolute inset-0 flex items-center justify-center bg-black/40 text-sm font-semibold text-white opacity-0 transition group-hover:opacity-100"><span lang="en">View details</span><span lang="es">Ver detalles</span></span>
+          </div>
+          <div class="space-y-1 p-6">
+            <h3 class="font-display text-xl text-white">Invoice Sentinel</h3>
+            <p class="text-sm text-accentSoft"><span lang="en">Personal project · LLM agents + evals · TypeScript</span><span lang="es">Proyecto personal · Agentes LLM + evals · TypeScript</span></p>
+            <p class="pt-2 text-sm font-semibold text-accent"><span lang="en">View details →</span><span lang="es">Ver detalles →</span></p>
+          </div>
+        </article>
+
         <article class="card reveal group cursor-pointer overflow-hidden rounded-2xl border border-white/10 bg-white/5" data-project="chameleon" data-category="games" role="button" tabindex="0" aria-haspopup="dialog" aria-label="View details: Escape the Chameleon" data-es-aria-label="Ver detalles: Escape the Chameleon">
           <div class="relative aspect-video overflow-hidden bg-black/40">
             <img src="images/chamaleon3.jpg" alt="Escape the Chameleon" class="h-full w-full object-cover" loading="lazy" />
@@ -906,6 +918,10 @@
             <span lang="es"><strong class="text-white">GDELT + Graph Neural Networks (TFM).</strong> Modelo que predice el comportamiento del S&amp;P 500 analizando noticias y eventos geopolíticos de todo el mundo.</span>
           </li>
           <li>
+            <span lang="en"><strong class="text-white">Cross-border Invoice Sentinel (personal project).</strong> LLM pipeline that checks restaurant supplier invoices in eight countries and drafts claims: the model only transcribes, TypeScript recomputes every amount, and per-country evals gate every change.</span>
+            <span lang="es"><strong class="text-white">Cross-border Invoice Sentinel (proyecto personal).</strong> Pipeline con LLM que revisa facturas de proveedores de restaurantes en ocho países y redacta reclamaciones: el modelo solo transcribe, TypeScript recalcula cada importe y unas evals por país validan cada cambio.</span>
+          </li>
+          <li>
             <span lang="en"><strong class="text-white">Bewitched (Unity, Bachelor's Thesis).</strong> Video game with an enemy behaviour system built with artificial intelligence algorithms, plus tutorials and first-time user experience design.</span>
             <span lang="es"><strong class="text-white">Bewitched (Unity, TFG).</strong> Videojuego con un sistema de comportamiento de enemigos basado en algoritmos de inteligencia artificial, además de tutoriales y diseño de la experiencia de primer uso.</span>
           </li>
@@ -1292,6 +1308,31 @@
         links: [
           { label: { en: 'Visit kaistories.io', es: 'Visitar kaistories.io' }, url: 'https://www.kaistories.io/en' },
           { label: { en: 'IBC 2026 announcement', es: 'Anuncio de IBC 2026' }, url: 'https://www.gestmusic.es/kai-brings-ai-assisted-storytelling-into-real-production-workflows-with-trials-launching-at-ibc-2026/' },
+        ],
+      },
+      sentinel: {
+        title: 'Cross-border Invoice Sentinel',
+        tag: {
+          en: 'Personal project · TypeScript, Mastra, Claude, Next.js',
+          es: 'Proyecto personal · TypeScript, Mastra, Claude, Next.js',
+        },
+        img: 'images/sentinel1.jpg',
+        gallery: ['images/sentinel1.jpg', 'images/sentinel2.jpg', 'images/sentinel3.jpg'],
+        desc: {
+          en: "Reads the invoices and delivery notes that suppliers send to restaurants in eight countries (ES, FR, IT, PT, IE, DK, DE, GB), checks that they add up under each country's tax rules, matches them against what was actually delivered and, when the supplier got it wrong, drafts the claim in their language. The LLM only transcribes the document: every amount is recomputed in TypeScript, and a person approves every claim before it is sent. Over 282 labelled documents: 0 % unfair claims and about $0.002 per document with Claude Haiku.",
+          es: 'Lee las facturas y albaranes que los proveedores envían a restaurantes de ocho países (ES, FR, IT, PT, IE, DK, DE, GB), comprueba que cuadran con las normas fiscales de cada país, los concilia con lo que realmente se entregó y, si el proveedor se ha equivocado, redacta la reclamación en su idioma. El LLM solo transcribe el documento: todos los importes se recalculan en TypeScript, y una persona aprueba cada reclamación antes de enviarla. Sobre 282 documentos etiquetados: 0 % de reclamaciones injustas y unos 0,002 $ por documento con Claude Haiku.',
+        },
+        stack: ['TypeScript', 'Mastra', 'Claude (Anthropic)', 'Zod', 'Vitest', 'Next.js', 'Langfuse', 'GitHub Actions'],
+        features: [
+          { title: { en: 'Blame the read first', es: 'Primero se duda de la lectura' }, text: { en: 'A supplier is only blamed when two independent reads agree on the same error; a read fixed after feedback must be confirmed by a blind read.', es: 'Solo se culpa al proveedor si dos lecturas independientes coinciden en el mismo error; una lectura corregida con feedback debe confirmarla una lectura a ciegas.' } },
+          { title: { en: 'Country packs', es: 'Packs por país' }, text: { en: 'Tax rates, regions (Canary Islands, Azores, Madeira), tax-id checksums and formats live in one folder per country; the core never branches on a country.', es: 'Tipos de IVA, regiones (Canarias, Azores, Madeira), dígitos de control y formatos viven en una carpeta por país; el núcleo nunca pregunta por el país.' } },
+          { title: { en: 'Delivery-note reconciliation', es: 'Conciliación con albaranes' }, text: { en: 'Invoice lines are matched against stored delivery notes to catch goods billed but never delivered.', es: 'Las líneas de la factura se cruzan con los albaranes recibidos para detectar lo facturado y no entregado.' } },
+          { title: { en: 'Human in the loop', es: 'Persona en el bucle' }, text: { en: 'The workflow suspends before anything reaches a supplier and resumes on approve, edit or discard.', es: 'El workflow se detiene antes de que nada llegue al proveedor y continúa al aprobar, editar o descartar.' } },
+          { title: { en: 'Evals with a regression gate', es: 'Evals con gate de regresión' }, text: { en: 'A labelled dataset per country, an LLM judge for claim quality, and CI that fails if any country drops.', es: 'Un dataset etiquetado por país, un juez LLM para la calidad de las reclamaciones y un CI que falla si baja cualquier país.' } },
+          { title: { en: 'Explainable web app', es: 'Web que explica cada veredicto' }, text: { en: 'Shows the original with the wrong figures marked, each read and why the system reached its verdict.', es: 'Muestra el original con las cifras erróneas marcadas, cada lectura y por qué el sistema llegó a su veredicto.' } },
+        ],
+        links: [
+          { label: { en: 'Code on GitHub', es: 'Código en GitHub' }, url: 'https://github.com/ricardmartin/cross-border-invoice-sentinel' },
         ],
       },
       chameleon: {
