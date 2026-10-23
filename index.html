@@ -1318,6 +1318,7 @@
         },
         img: 'images/sentinel1.jpg',
         gallery: ['images/sentinel1.jpg', 'images/sentinel2.jpg', 'images/sentinel3.jpg'],
+        video: 'images/sentinel-demo.webm',
         desc: {
           en: "Reads the invoices and delivery notes that suppliers send to restaurants in eight countries (ES, FR, IT, PT, IE, DK, DE, GB), checks that they add up under each country's tax rules, matches them against what was actually delivered and, when the supplier got it wrong, drafts the claim in their language. The LLM only transcribes the document: every amount is recomputed in TypeScript, and a person approves every claim before it is sent. Over 282 labelled documents: 0 % unfair claims and about $0.002 per document with Claude Haiku.",
           es: 'Lee las facturas y albaranes que los proveedores envían a restaurantes de ocho países (ES, FR, IT, PT, IE, DK, DE, GB), comprueba que cuadran con las normas fiscales de cada país, los concilia con lo que realmente se entregó y, si el proveedor se ha equivocado, redacta la reclamación en su idioma. El LLM solo transcribe el documento: todos los importes se recalculan en TypeScript, y una persona aprueba cada reclamación antes de enviarla. Sobre 282 documentos etiquetados: 0 % de reclamaciones injustas y unos 0,002 $ por documento con Claude Haiku.',
@@ -1424,7 +1425,10 @@
     let currentProject = null;
 
     function renderMedia(item, title) {
-      modalMedia.innerHTML = item.type === 'video'
+      // Vídeos propios (.webm/.mp4) con <video>; los de YouTube, en iframe
+      modalMedia.innerHTML = item.type === 'video' && /\.(webm|mp4)$/.test(item.src)
+        ? `<video class="h-full w-full bg-black object-contain" src="${item.src}" title="${title}" controls autoplay muted loop playsinline></video>`
+        : item.type === 'video'
         ? `<iframe class="h-full w-full" src="${item.src}" title="${title}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`
         : `<img src="${item.src}" alt="${title}" class="h-full w-full object-cover" />`;
     }
