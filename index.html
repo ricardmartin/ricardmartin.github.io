@@ -32,7 +32,26 @@
 						<li><a href="assets/pdf/cv.pdf" target="_blank" class="button">Descargar CV</a></li>
 					</ul>
 				</div>
-				<a href="#one" class="goto-next scrolly">Next</a>
+				<a href="#invoice-sentinel" class="goto-next scrolly">Next</a>
+			</section>
+
+			<!-- Invoice Sentinel -->
+			<section id="invoice-sentinel" class="spotlight style3 left">
+				<span class="image fit main"><img src="images/invoice-sentinel.png" alt="Invoice Sentinel: a supplier invoice with the wrong figure marked, two reads that agree on the error and the claim draft awaiting approval" /></span>
+				<div class="content">
+					<header>
+						<h2>Cross-border Invoice Sentinel</h2>
+						<p>Personal AI engineering project (TypeScript, Mastra, Claude, Next.js)</p>
+					</header>
+					<p><b>Checks restaurant supplier invoices and delivery notes in eight countries and drafts a claim when the supplier got it wrong.</b>
+	An LLM only transcribes the document; every number is recomputed in TypeScript with per-country tax packs (ES, FR, IT, PT, IE, DK, DE, GB).
+	A supplier is only blamed when two independent reads agree on the same error, a read fixed after feedback must be confirmed by a blind read, and a person approves every claim.
+	Each country has a labelled dataset and a regression gate in CI: 282 documents, 0 % unfair claims, about $0.002 per document with Haiku.</p>
+					<ul class="actions">
+						<li><a href="https://github.com/ricardmartin/cross-border-invoice-sentinel" class="button">Code</a></li>
+					</ul>
+				</div>
+				<a href="#chameleon" class="goto-next scrolly">Next</a>
 			</section>
 
 			<!-- One -->
