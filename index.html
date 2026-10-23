@@ -159,9 +159,8 @@
 
         <article class="card reveal group cursor-pointer overflow-hidden rounded-2xl border border-accent/30 bg-white/5" data-project="aitools" data-category="ai-web" role="button" tabindex="0" aria-haspopup="dialog" aria-label="View details: Banijay AI Tools" data-es-aria-label="Ver detalles: Banijay AI Tools">
           <div class="relative aspect-video overflow-hidden bg-black/40">
-            <img src="images/aitools.jpg" alt="Banijay AI Tools" class="h-full w-full object-cover" loading="lazy" />
+            <img src="images/aitools.jpg" alt="Banijay AI Tools" class="h-full w-full object-cover" loading="lazy" data-preview="images/ait-preview.webm" data-preview-start="0.95" data-preview-end="15.4" />
             <span class="absolute left-3 top-3 rounded-full bg-accent/90 px-3 py-1 text-xs font-semibold text-white">★ <span lang="en">Featured</span><span lang="es">Destacado</span></span>
-            <span class="pointer-events-none absolute inset-0 flex items-center justify-center bg-black/40 text-sm font-semibold text-white opacity-0 transition group-hover:opacity-100"><span lang="en">View details</span><span lang="es">Ver detalles</span></span>
           </div>
           <div class="space-y-1 p-6">
             <h3 class="font-display text-xl text-white">Banijay AI Tools</h3>
@@ -172,8 +171,7 @@
 
         <article class="card reveal group cursor-pointer overflow-hidden rounded-2xl border border-white/10 bg-white/5" data-project="kai" data-category="ai-web" role="button" tabindex="0" aria-haspopup="dialog" aria-label="View details: KAI" data-es-aria-label="Ver detalles: KAI">
           <div class="relative aspect-video overflow-hidden bg-black/40">
-            <img src="images/kai.jpg" alt="KAI website" data-es-alt="Web de KAI" class="h-full w-full object-cover" loading="lazy" />
-            <span class="pointer-events-none absolute inset-0 flex items-center justify-center bg-black/40 text-sm font-semibold text-white opacity-0 transition group-hover:opacity-100"><span lang="en">View details</span><span lang="es">Ver detalles</span></span>
+            <img src="images/kai.jpg" alt="KAI website" data-es-alt="Web de KAI" class="h-full w-full object-cover" loading="lazy" data-preview="images/kai-preview.webm" data-preview-start="0.6" data-preview-end="14.7" />
           </div>
           <div class="space-y-1 p-6">
             <h3 class="font-display text-xl text-white">KAI</h3>
@@ -1270,6 +1268,7 @@
           es: 'Desarrollo full-stack · React + Python · Gestmusic (Banijay Iberia)',
         },
         img: 'images/aitools.jpg',
+        video: 'images/ait-preview.webm',
         desc: {
           en: "A full-stack internal platform I designed and built end-to-end for Gestmusic (Banijay Iberia): a single hub that brings together AI and automation tools to speed up the company's everyday creative and production work. (Internal tool, shown here at a high level for confidentiality.)",
           es: 'Una plataforma interna full-stack que diseñé y construí de principio a fin para Gestmusic (Banijay Iberia): un único punto de acceso que reúne herramientas de IA y automatización para agilizar el trabajo creativo y de producción del día a día de la empresa. (Herramienta interna, mostrada aquí a grandes rasgos por confidencialidad.)',
@@ -1292,6 +1291,7 @@
           es: 'Desarrollo full-stack · Gestmusic y Amplify · EIT Culture & Creativity',
         },
         img: 'images/kai.jpg',
+        video: 'https://www.kaistories.io/demo.mp4',
         desc: {
           en: "An AI storytelling platform for TV and film production, built by Gestmusic and Amplify with support from EIT Culture & Creativity, research from Fraunhofer IPK and an analysis core by Ugiat Technologies. It indexes hours of raw footage (transcripts, scene descriptions, emotional cues) so teams can find key moments, build stories from natural-language prompts and send the selection straight to the editing timeline. It launched at ISE 2026 in Barcelona and was shown at NAB Show and IBC 2026. I worked on it as a full-stack developer and helped build the AI agents developed together with the partner companies.",
           es: 'Una plataforma de storytelling con IA para la producción de televisión y cine, creada por Gestmusic y Amplify con el apoyo de EIT Culture & Creativity, la investigación de Fraunhofer IPK y un núcleo de análisis de Ugiat Technologies. Indexa horas de material en bruto (transcripciones, descripciones de escenas, señales emocionales) para que los equipos encuentren los momentos clave, construyan historias a partir de prompts en lenguaje natural y envíen la selección directamente a la línea de tiempo de edición. Se lanzó en ISE 2026 en Barcelona y se presentó en NAB Show e IBC 2026. Trabajé en su desarrollo full-stack y ayudé a construir los agentes de IA desarrollados junto con las empresas socias.',
@@ -1302,6 +1302,7 @@
           { title: { en: 'Story building', es: 'Construcción de historias' }, text: { en: 'Storylines, summaries, character arcs and thematic cuts generated from prompts.', es: 'Líneas argumentales, resúmenes, arcos de personajes y cortes temáticos generados a partir de prompts.' } },
           { title: { en: 'Premiere Pro panel', es: 'Panel para Premiere Pro' }, text: { en: 'Search, build stories and send selections to the timeline without leaving the editor.', es: 'Busca, construye historias y envía selecciones a la línea de tiempo sin salir del editor.' } },
           { title: { en: 'Product website', es: 'Web del producto' }, text: { en: 'My work: sign-in with several saved accounts, invoices in MongoDB, the blog, localisation and deployment.', es: 'Mi trabajo: inicio de sesión con varias cuentas guardadas, facturas en MongoDB, el blog, la localización y el despliegue.' } },
+          { title: { en: 'Audio and video engines', es: 'Motores de audio y vídeo' }, text: { en: 'Transcript and dialogue on one side, what appears on screen on the other; productions can start with audio only.', es: 'La transcripción y el diálogo por un lado y lo que aparece en pantalla por otro; una producción puede empezar solo con audio.' } },
           { title: { en: 'AI agents', es: 'Agentes de IA' }, text: { en: 'Support on the agents built jointly with the partner companies.', es: 'Apoyo en los agentes creados conjuntamente con las empresas socias.' } },
         ],
         links: [
