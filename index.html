@@ -315,6 +315,12 @@
         <p class="tile-meta"><span lang="en">Personal project · LLM agents + evals · TypeScript</span><span lang="es">Proyecto personal · Agentes LLM + evals · TypeScript</span></p>
       </article>
 
+      <article class="tile" data-project="michi" data-category="ai-web" role="button" tabindex="0" aria-haspopup="dialog" aria-label="View details: Michi" data-es-aria-label="Ver detalles: Michi">
+        <div class="tile-media"><img src="images/michi1.jpg" alt="Michi, a white cat with an indigo headband, next to the app on a phone" data-es-alt="Michi, un gato blanco con cinta añil, junto a la app en un móvil" class="h-full w-full object-cover" loading="lazy" data-preview="images/michi-preview.webm" /></div>
+        <h3 class="tile-title">Michi</h3>
+        <p class="tile-meta"><span lang="en">Personal project · Japanese learning app · Android</span><span lang="es">Proyecto personal · App para aprender japonés · Android</span></p>
+      </article>
+
       <article class="tile" data-project="chameleon" data-category="games" role="button" tabindex="0" aria-haspopup="dialog" aria-label="View details: Escape the Chameleon" data-es-aria-label="Ver detalles: Escape the Chameleon">
         <div class="tile-media"><img src="images/chamaleon3.jpg" alt="Escape the Chameleon" class="h-full w-full object-cover" loading="lazy" data-preview="images/chameleon-preview.webm" /></div>
         <h3 class="tile-title">Escape the Chameleon</h3>
@@ -1416,6 +1422,30 @@
           { label: { en: 'Visit kaistories.io', es: 'Visitar kaistories.io' }, url: 'https://www.kaistories.io/en' },
           { label: { en: 'IBC 2026 announcement', es: 'Anuncio de IBC 2026' }, url: 'https://www.gestmusic.es/kai-brings-ai-assisted-storytelling-into-real-production-workflows-with-trials-launching-at-ibc-2026/' },
         ],
+      },
+      michi: {
+        title: 'Michi',
+        tag: {
+          en: 'Personal project · Next.js, React, Capacitor (Android)',
+          es: 'Proyecto personal · Next.js, React, Capacitor (Android)',
+        },
+        img: 'images/michi1.jpg',
+        gallery: ['images/michi1.jpg', 'images/michi2.jpg', 'images/michi3.jpg', 'images/michi4.jpg', 'images/michi5.jpg'],
+        video: 'images/michi-demo.webm',
+        desc: {
+          en: 'My Japanese class notes, 25 Word documents, turned into an app I actually learn from. Michi, a white cat with an indigo hachimaki, guides every session: it waves when you arrive, thinks with you on each question, gets sad when you miss, cheers when you finish and dozes off at night. The notes became 243 four-minute microlessons across 22 topics, with a 1,983-word vocabulary, XP, streaks and 19 achievements. AI agents draft each lesson from the notes and a reviewer agent on a different model checks the Japanese. It runs on the phone, offline.',
+          es: 'Mis apuntes de clase de japonés, 25 documentos de Word, convertidos en una app con la que aprendo de verdad. Michi, un gato blanco con hachimaki añil, guía cada sesión: saluda al llegar, piensa contigo cada pregunta, se pone triste si fallas, lo celebra al terminar y se duerme por la noche. Los apuntes se convirtieron en 243 microlecciones de cuatro minutos repartidas en 22 temas, con 1.983 palabras de vocabulario, XP, rachas y 19 logros. Unos agentes de IA redactan cada lección a partir de los apuntes y un agente revisor con otro modelo comprueba el japonés. Funciona en el móvil y sin conexión.',
+        },
+        stack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Capacitor', 'Vitest', { en: 'AI agents', es: 'Agentes de IA' }],
+        features: [
+          { title: { en: 'Michi, the mascot', es: 'Michi, la mascota' }, text: { en: 'Seven animated moods drawn in SVG and moved with CSS only: no animation JavaScript, light on the Android WebView and still with reduced motion.', es: 'Siete humores animados, dibujados en SVG y movidos solo con CSS: sin JavaScript de animación, ligero en el WebView de Android y quieto con movimiento reducido.' } },
+          { title: { en: 'Four-minute microlessons', es: 'Microlecciones de cuatro minutos' }, text: { en: 'Each lesson split into two or three parts: the idea with examples and audio, practice straight after, then a quick review.', es: 'Cada lección partida en dos o tres partes: la idea con ejemplos y audio, práctica justo después y un repaso rápido.' } },
+          { title: { en: 'Mistakes come back', es: 'Los fallos vuelven' }, text: { en: 'Every miss returns at the end of the session and goes to an error bank you can practise and redeem.', es: 'Cada fallo vuelve al final de la sesión y pasa a un banco de errores que puedes practicar y redimir.' } },
+          { title: { en: 'Word bank', es: 'Banco de palabras' }, text: { en: 'New vocabulary ten words at a time, learnt over three sessions and reviewed as you go.', es: 'Vocabulario nuevo de diez en diez, asimilado en tres sesiones y repasado sobre la marcha.' } },
+          { title: { en: 'Streaks and achievements', es: 'Rachas y logros' }, text: { en: 'XP, a daily goal, stars per lesson, levels, 19 achievements and a daily reminder on the phone.', es: 'XP, meta diaria, estrellas por lección, niveles, 19 logros y un recordatorio diario en el móvil.' } },
+          { title: { en: 'Offline on Android', es: 'Sin conexión en Android' }, text: { en: 'A static Next.js export packaged with Capacitor; progress stays on the device.', es: 'Un export estático de Next.js empaquetado con Capacitor; el progreso se queda en el dispositivo.' } },
+        ],
+        links: [],
       },
       sentinel: {
         title: 'Cross-border Invoice Sentinel',
